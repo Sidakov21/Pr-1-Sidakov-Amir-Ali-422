@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Пр_1_по_ПиТ_Сидаков_Амир_и_Сидаков_Али_422"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
     <Grid Margin="10">
         <!-- Формула -->
-        <Image Source="/Image1.png" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Source="/Image1.png" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Математическая формула для вычисления k"/>
 
         <!-- Метки и поля ввода -->
         <Label Content="x" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxX" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox Name="TextBoxX" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" Width="80" ToolTip="Введите значение x (число)"/>
 
         <Label Content="q" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxQ" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox Name="TextBoxQ" HorizontalAlignment="Left" Margin="50,140,0,0" VerticalAlignment="Top" Width="80" ToolTip="Введите значение q (число)" />
 
         <!-- Радиокнопки выбора функции -->
-        <RadioButton Name="RadioShX" Content="sh(x)" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-        <RadioButton Name="RadioX2" Content="x²" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-        <RadioButton Name="RadioExpX" Content="e^x" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="RadioShX" Content="sh(x)" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" ToolTip="Функция гиперболического синуса: sh(x)"/>
+        <RadioButton Name="RadioX2" Content="x²" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" ToolTip="Функция квадрата: f(x) = x²" />
+        <RadioButton Name="RadioExpX" Content="e^x" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" ToolTip="Экспоненциальная функция: f(x) = e^x"/>
 
         <!-- Кнопки -->
-        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="100" Click="CalculateButton_Click"/>
-        <Button Content="Очистить" HorizontalAlignment="Left" Margin="150,220,0,0" VerticalAlignment="Top" Width="100" Click="ClearButton_Click"/>
+        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="150,180,0,0" VerticalAlignment="Top" Width="100" Click="CalculateButton_Click" ToolTip="Выполнить вычисление"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="150,220,0,0" VerticalAlignment="Top" Width="100" Click="ClearButton_Click" ToolTip="Сбросить все поля"/>
 
         <!-- Ответ -->
         <Label Content="Ответ" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="ResultTextBox" HorizontalAlignment="Left" Margin="60,280,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True"/>
+        <TextBox Name="ResultTextBox" HorizontalAlignment="Left" Margin="60,280,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True"  ToolTip="Здесь появится результат вычислений"/>
     </Grid>
 </Window>

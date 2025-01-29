@@ -25,22 +25,6 @@ namespace Пр_1_по_ПиТ_Сидаков_Амир_и_Сидаков_Али_42
             InitializeComponent();
         }
 
-        private void CalculateButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                double x = double.Parse(TextBoxX.Text);
-                double q = double.Parse(TextBoxQ.Text);
-                double f_x = ComputeFunction(x);
-                double result = SolveEquation(x, q, f_x);
-                ResultTextBox.Text = result.ToString("F4"); // Округление до 4 знаков
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка: " + ex.Message);
-            }
-        }
-
         private double ComputeFunction(double x)
         {
             if (RadioShX.IsChecked == true)
@@ -63,11 +47,53 @@ namespace Пр_1_по_ПиТ_Сидаков_Амир_и_Сидаков_Али_42
                 return f_x + q;
         }
 
+        private void CalculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                double x = double.Parse(TextBoxX.Text);
+                double q = double.Parse(TextBoxQ.Text);
+                double f_x = ComputeFunction(x);
+                double result = SolveEquation(x, q, f_x);
+                ResultTextBox.Text = result.ToString("F4"); // Округление до 4 знаков
+                TextBoxX.IsReadOnly = true;
+                TextBoxQ.IsReadOnly = true;
+                ResultTextBox.IsReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
+        }
+
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             TextBoxX.Clear();
             TextBoxQ.Clear();
             ResultTextBox.Clear();
+
+            // Сбрасываем выбор RadioButton
+            RadioShX.IsChecked = false;
+            RadioX2.IsChecked = false;
+            RadioExpX.IsChecked = false;
+
+            //Делаем снова кликабельными
+            TextBoxX.IsReadOnly = false;
+            TextBoxQ.IsReadOnly = false;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Вы уверены, что хотите выйти?",
+                "Подтверждение выхода",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true; // Отменяем закрытие окна
+            }
         }
     }
 }
