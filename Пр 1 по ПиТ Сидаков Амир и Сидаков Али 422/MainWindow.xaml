@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Image Margin="10,10,366,317" Source="/Image1.png" Stretch="Fill"/>
+        <Label Content="x" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="34" Width="24"/>
+        <Label Content="q" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="34" Width="32"/>
+        <TextBox HorizontalAlignment="Left" Margin="46,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="49,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="23"/>
+        <RadioButton Content="sh(x)" HorizontalAlignment="Left" Margin="26,256,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" Height="19" Width="67"/>
+        <RadioButton Content="x^2" HorizontalAlignment="Left" Margin="26,282,0,0" VerticalAlignment="Top" Height="19" Width="61"/>
+        <RadioButton Content="e^x" HorizontalAlignment="Left" Margin="26,308,0,0" VerticalAlignment="Top" Height="19" Width="60"/>
+        <Label Content="Ответ" HorizontalAlignment="Left" Margin="16,335,0,0" VerticalAlignment="Top" Height="34" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Margin="89,340,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="187" Height="24"/>
+        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="236,256,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="236,292,0,0" VerticalAlignment="Top" Click="Button_Click" Height="26" Width="85"/>
     </Grid>
 </Window>

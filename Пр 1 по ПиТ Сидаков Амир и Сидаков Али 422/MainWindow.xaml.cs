@@ -24,5 +24,15 @@ namespace Пр_1_по_ПиТ_Сидаков_Амир_и_Сидаков_Али_42
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
