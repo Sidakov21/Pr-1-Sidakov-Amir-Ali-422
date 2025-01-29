@@ -25,14 +25,49 @@ namespace Пр_1_по_ПиТ_Сидаков_Амир_и_Сидаков_Али_42
             InitializeComponent();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                double x = double.Parse(TextBoxX.Text);
+                double q = double.Parse(TextBoxQ.Text);
+                double f_x = ComputeFunction(x);
+                double result = SolveEquation(x, q, f_x);
+                ResultTextBox.Text = result.ToString("F4"); // Округление до 4 знаков
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message);
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private double ComputeFunction(double x)
         {
+            if (RadioShX.IsChecked == true)
+                return Math.Sinh(x);
+            else if (RadioX2.IsChecked == true)
+                return Math.Pow(x, 2);
+            else
+                return Math.Exp(x);
+        }
 
+        private double SolveEquation(double x, double q, double f_x)
+        {
+            double product = Math.Abs(x * q);
+
+            if (product > 10)
+                return Math.Log(Math.Abs(f_x) + Math.Abs(q));
+            else if (product < 10)
+                return Math.Exp(f_x + q);
+            else
+                return f_x + q;
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxX.Clear();
+            TextBoxQ.Clear();
+            ResultTextBox.Clear();
         }
     }
 }
